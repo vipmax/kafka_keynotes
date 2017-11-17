@@ -1,6 +1,6 @@
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer(bootstrap_servers='127.0.0.1:9092',
+consumer = KafkaConsumer(bootstrap_servers='192.168.13.109:9092',
                          group_id="test",
                          value_deserializer=bytes.decode)
 
