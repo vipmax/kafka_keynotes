@@ -7,9 +7,10 @@ consumer = KafkaConsumer(
     enable_auto_commit=False
 )
 
+topic = 'test2'
 while True:
-    for p in consumer.partitions_for_topic('test'):
-        tp = TopicPartition('test', p)
+    for p in consumer.partitions_for_topic(topic):
+        tp = TopicPartition(topic, p)
         consumer.assign([tp])
         committed = consumer.committed(tp)
         consumer.seek_to_end(tp)
@@ -18,7 +19,7 @@ while True:
         current_timestamp = int(time.time())
         print(current_timestamp)
         print("topic: {} partition: {} committed: {} last: {} ".format(
-            'test', p, committed, last_offset)
+            topic, p, committed, last_offset)
         )
 
     time.sleep(1)

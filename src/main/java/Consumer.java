@@ -16,7 +16,7 @@ class Consumer {
 
         KafkaConsumer consumer = new KafkaConsumer<String, String>(props);
 
-        consumer.subscribe(Collections.singletonList("test"));
+        consumer.subscribe(Collections.singletonList("test2"));
 
         while (true) {
             final ConsumerRecords<Long, String> consumerRecords = consumer.poll(1000);
@@ -26,7 +26,7 @@ class Consumer {
                         record.partition(), record.offset(), record.value());
             });
 
-            consumer.commitAsync();
+//            consumer.commitAsync();
         }
     }
 }
