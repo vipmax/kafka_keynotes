@@ -1,5 +1,5 @@
-bin/zookeeper-server-start.sh config/zookeeper.properties
-bin/kafka-server-start.sh config/server.properties
+#bin/zookeeper-server-start.sh config/zookeeper.properties
+#bin/kafka-server-start.sh config/server.properties
 
 nohup kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties > zoo.log &
 sleep 1s
