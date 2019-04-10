@@ -22,7 +22,7 @@ class Consumer {
         while (true) {
             final ConsumerRecords<Long, String> consumerRecords = consumer.poll(Duration.ofSeconds(1));
             consumerRecords.forEach(record -> {
-                System.out.printf("topic=%s key=%d partition=%d offset=%d value=%s  \n",
+                System.out.printf("topic=%s key=%s partition=%d offset=%d value=%s  \n",
                         record.topic(),record.key(),
                         record.partition(), record.offset(), record.value());
             });

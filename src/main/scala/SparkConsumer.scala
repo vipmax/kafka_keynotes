@@ -30,7 +30,7 @@ object  SparkConsumer {
 
     val stream = KafkaUtils.createDirectStream[String, String](
       ssc, PreferConsistent,
-      Subscribe[String, String](Array("test10"), kafkaParams)
+      Subscribe[String, String](Array("test"), kafkaParams)
     )
 
     stream.foreachRDD{ rdd =>
